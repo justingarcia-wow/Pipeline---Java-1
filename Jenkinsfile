@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                // Compile the Java code
-                sh 'javac -d target /home/jenkins/exercises/pipeline-java/ToUpper.java'
+                sh 'mkdir -p target'
+                sh 'javac -d target ToUpper.java'
             }
         }       
         stage('Deploy') {
